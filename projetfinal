@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ma Page Web</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000000;
+            color: #ddd;
+           
+        }
+        .navbar {
+            text-align: center;
+            background-color: #000000;
+           
+            padding: 10px;
+            
+        }
+        .navbar a {
+            
+            color: #f2f2f2 ;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration:none;
+         }
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .section {
+            padding: 70px;
+            text-align: center; 
+
+        }
+
+        #home {
+                height: 400px;
+                background-image: url(assets/img/cov.png);
+                background-size: 1250px;
+            
+
+        }
+        
+        #home > h1 {
+                
+            font: 800 70px sans-serif;
+            -webkit-text-fill-color: transparent;
+            -webkit-text-stroke: 1px;
+            -webkit-text-stroke-color: white;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            
+            
+          
+        }   
+        #home span {
+            font: 800 70px sans-serif;
+            -webkit-text-fill-color: white;
+            -webkit-text-stroke: 1px;
+            -webkit-text-stroke-color: #e31792 ;
+            
+        }
+
+        button {
+                background-color: #000000;
+                border: none;
+                color: white;
+                padding: 15px 32px;
+                text-align: center;
+                
+                display: inline-block;
+                font-size: 16px; 
+                text-decoration: none;
+                margin: 4px 2px;
+                cursor: pointer;
+                transition-duration: 0.4s;
+                }
+
+        button:hover {
+                background-color:#e31792;
+                text-decoration: none;
+        }
+
+        button a {
+                color: white;
+                text-decoration: none;
+        }
+
+        img{
+            width: 150px;
+            height: 70px;
+        }   
+
+        .texte {
+                text-align: left;
+        }
+
+        .card-container {
+                display: flex;
+                justify-content: space-around;
+        }
+
+        .card {
+                width: 200px;
+                height: 250px;
+                border: 1px solid #ccc;
+                border-radius: 10px;
+                text-align: center;
+                padding: 20px;
+                
+        }
+
+        .card img {
+                width: 100%;
+                height: 150px;
+                object-fit: cover;
+        }
+
+    
+
+            form {
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            }
+
+            label {
+            display: block;
+            margin-bottom:10px;
+            }
+
+            input, textarea {
+            width: 100%;
+            padding: 10px; 
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            }
+
+            textarea {
+            height: 100px;
+            }
+
+            input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            
+        }
+
+        
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<div id="home" class="section">
+  <h1>Bienvenue <br> chez <br> <span> ROLLA BOUTIQUE</span></h1>
+ <button> <a href="#about"> En savoir plus </a> </button> 
+
+
+
+<div id="about" class="section">
+    <h1>À propos</h1>
+        <div class="image">
+            <img src="assets/img/LOGO ROLLA BOUTIQUE.jpg" alt="Votre image">
+        </div>
+            <div class="texte">
+            <p>Rolla Boutique, est une boutique de vente de vêtements et accessoires pour femme en ligne. Née d'un amour pour la mode, elle a vu la jour à Abidjan en 2021 et a pour fondatrice Koré Caroll. Notre objectif principal, est de sublimer et réveler l'indetité de chaque femme, à travers la tenue qu'elle arbore. </p> 
+            </div>
+            <section class="card-container">
+                <div class="card">
+                  <img src="assets/img/sac.jpg" alt="Sacs">
+                  <h3>Sacs</h3>
+                </div>
+                <div class="card">
+                  <img src="assets/img/robe.jpg" alt="Robes">
+                  <h3>Robes</h3>
+                </div>
+                <div class="card">
+                  <img src="assets/img/bijoux.jpg" alt="Bijoux">
+                  <h3>Bijoux</h3>
+                </div>
+              </section>
+ 
+   
+        
+
+</div>
+
+<div id="contact" class="section">
+  <h1>Contact</h1>
+  <form>
+    <label for="nom">Nom :</label>
+    <input type="text" id="nom" name="nom"
+ required>
+
+    <label for="email">Email :</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="message">Message :</label>
+    <textarea id="message" name="message" required></textarea>
+
+    <input type="submit" value="Envoyer">
+
+  </form>
+
+</div>
+
+  <footer>      
+      <div class="copyright">
+        &copy; 2023 
+   Votre Site. Tous droits réservés.
+      </div>
+
+  </footer>
+
+
+</body>
+</html>
+</div>
+
+<script>
+    const text = document.querySelector('#home h1');
+
+    function animateText() {
+  text.style.opacity = 1; 
+  setTimeout(() => {
+    text.style.opacity = 0; 
+    setTimeout(animateText, 2000); 
+  }, 1000);
+}
+animateText();
+</script>
+
+</body>
+</html>
